@@ -10,6 +10,10 @@
     margin-bottom: 2.5%;
 }
 
+#burger-item {
+    margin-bottom: 1%;
+}
+
 body {
     background-color: orange;
 }
