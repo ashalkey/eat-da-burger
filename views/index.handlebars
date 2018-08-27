@@ -1,0 +1,31 @@
+<div class="text-center body container">
+
+    <img id="burger-pic" src="/assets/img/burger.png" class="img-fluid">
+    <h1>EAT-DA-BURGER!</h1>
+    <div class="row" id="list-row">
+        <div class="col-md-4 offset-md-2 float-left">
+            <ol class="list-group">
+                {{#each burgers}} {{#unless devoured}} {{> burgers/burger-block}} {{/unless}} {{/each}}
+            </ol>
+        </div>
+        <div class="col-md-4 float-right">
+            <ol class="list-group">
+                {{#each burgers}} {{#if devoured}} {{> burgers/devoured-block}} {{/if}} {{/each}}
+            </ol>
+        </div>
+    </div>
+
+
+    <div class="row">
+        <div class="col-md-12">
+            <form class="create-form">
+                <textarea id="myBurger" rows="4" cols="50" maxlength="100">
+
+                </textarea>
+
+            </form>
+            <p>Enter what kind of burger you want to eat, then serve it up by clicking the button below!</p>
+            <button type="submit" id="submit-button" class="btn btn-warning">Serve it up!</button>
+        </div>
+    </div>
+</div>
