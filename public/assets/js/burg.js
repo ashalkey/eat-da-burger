@@ -25,13 +25,17 @@ $(function() {
 
     $("#submit-button").on("click", function(event) {
         event.preventDefault();
+        var myBurger = $("#myBurger").val().trim();
+        if(myBurger === ""){
+            alert("You must enter some text in the text field before serving up a burger");
+        }
 
+        else {
         var newBurger = {
             burger_name: $("#myBurger").val().trim(),
             devoured: 0
         };
 
-        console.log("The new burger is" + newBurger.burger_name);
 
         $.ajax("/api/burgers", {
             type: "POST",
@@ -40,5 +44,6 @@ $(function() {
             console.log("New burger created");
             location.reload();
         })
+    }
     });
 });
